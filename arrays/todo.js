@@ -14,7 +14,7 @@ const todos = [{
     text: 'Move to London',
     completed: false
 }, {
-    indextext: 'Live life',
+    text: 'Live life',
     completed: true
 }, {
     text: 'Try new things',
@@ -24,7 +24,7 @@ const todos = [{
 
 const deleteTodo = function(todos, todoText) {
     const index = todos.findIndex(function(todo) {
-        return todo.text.toLowerCase() === todoText.toLowerCase()
+        return todo.text.toLowerCase() === todoText.toLowerCase();
     })
     if (index > -1) {
         todos.splice(index, 1)
