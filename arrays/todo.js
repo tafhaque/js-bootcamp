@@ -31,10 +31,22 @@ const deleteTodo = function(todos, todoText) {
     }
 }
 
+const getThingsToDo = function(todos) {
+    return todos.filter(function(todo, index) {
+        // return todo.completed === false
+        return !todo.completed
+    })
+
+}
+
+
+console.log(getThingsToDo(todos));
+
 // const note = findNote(notes, 'Some other office modification')
 // console.log(note);
-deleteTodo(todos, 'live life')
-console.log(todos);
+
+// deleteTodo(todos, 'live life')
+// console.log(todos);
 
 
 

@@ -10,12 +10,36 @@ const notes = [{
 }]
 
 
-// Using .find()
 const findNote = function(notes, noteTitle) {
     return notes.find(function(note, index) {
         return note.title.toLowerCase() === noteTitle.toLowerCase()
     })
 }
+
+
+// Find filter
+const findNotes = function(notes, query) {
+    return notes.filter(function(note, index) {
+        const isTitleMatch = note.title.toLowerCase().includes(query.toLowerCase());
+        const isbodyMatch = note.body.toLowerCase().includes(query.toLowerCase());
+        return isTitleMatch || isbodyMatch
+    })
+
+}
+
+console.log(findNotes(notes, 'work'));
+
+
+const note = findNote(notes, 'Some other office modification')
+console.log(note);
+
+
+// Using .find()
+// const findNote = function(notes, noteTitle) {
+//     return notes.find(function(note, index) {
+//         return note.title.toLowerCase() === noteTitle.toLowerCase()
+//     })
+// }
 
 
 // Using .findIndex()
@@ -26,8 +50,6 @@ const findNote = function(notes, noteTitle) {
 //     return notes[index]
 // }
 
-const note = findNote(notes, 'Some other office modification')
-console.log(note);
 
 
 // console.log(notes.length);
