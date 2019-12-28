@@ -9,6 +9,15 @@ const notes = [{
     body: 'Get a new seat'
 }]
 
+console.log('a' < 'A');
+
+const sortNotes = function(notes) {
+    notes.sort(function(a, b) {
+
+
+    })
+
+}
 
 const findNote = function(notes, noteTitle) {
     return notes.find(function(note, index) {
