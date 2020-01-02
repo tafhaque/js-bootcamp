@@ -12,6 +12,8 @@ const notes = [{
 //
 // console.log('a' < 'A');
 
+
+// Sort 
 const sortNotes = function(notes) {
     notes.sort(function(a, b) {
         if (a.title.toLowerCase() < b.title.toLowerCase()) {
@@ -26,6 +28,7 @@ const sortNotes = function(notes) {
 
 }
 
+// Find
 const findNote = function(notes, noteTitle) {
     return notes.find(function(note, index) {
         return note.title.toLowerCase() === noteTitle.toLowerCase()
