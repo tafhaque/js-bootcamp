@@ -22,6 +22,21 @@ const todos = [{
 }]
 
 
+const sortTodos = function(todos) {
+    todos.sort(function(a, b) {
+        if (!a.completed && b.completed) {
+            return -1
+        } else if (!b.completed && a.completed) {
+            return 1
+        } else {
+            return 0
+        }
+
+    })
+
+}
+
+
 const deleteTodo = function(todos, todoText) {
     const index = todos.findIndex(function(todo) {
         return todo.text.toLowerCase() === todoText.toLowerCase();
@@ -31,6 +46,7 @@ const deleteTodo = function(todos, todoText) {
     }
 }
 
+// Filter
 const getThingsToDo = function(todos) {
     return todos.filter(function(todo, index) {
         // return todo.completed === false
@@ -40,7 +56,10 @@ const getThingsToDo = function(todos) {
 }
 
 
-console.log(getThingsToDo(todos));
+sortTodos(todos);
+console.log(todos);
+
+// console.log(getThingsToDo(todos));
 
 // const note = findNote(notes, 'Some other office modification')
 // console.log(note);
